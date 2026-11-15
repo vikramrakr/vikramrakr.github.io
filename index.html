@@ -1,1037 +1,1658 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vikram Rajaram — Software & Systems Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-base: #0B0F17;
-      --bg-surface: #131A26;
-      --bg-surface-hover: #182232;
-      --border-subtle: rgba(148, 163, 184, 0.16);
-      --border-accent: rgba(56, 189, 248, 0.45);
-      --text-primary: #F1F5F9;
-      --text-secondary: #94A3B8;
-      --accent-cyan: #38BDF8;
-      --accent-emerald: #34D399;
-      --accent-indigo: #818CF8;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vikram Rajaram — Software & Systems Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-base: #0b0f17;
+        --bg-surface: #131a26;
+        --bg-surface-hover: #182232;
+        --border-subtle: rgba(148, 163, 184, 0.16);
+        --border-accent: rgba(56, 189, 248, 0.45);
+        --text-primary: #f1f5f9;
+        --text-secondary: #94a3b8;
+        --accent-cyan: #38bdf8;
+        --accent-emerald: #34d399;
+        --accent-indigo: #818cf8;
+      }
+
+      .tech-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 14px;
+      }
+
+      .tech-pill {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.75rem;
+        color: var(--text-secondary, #94a3b8);
+        background: rgba(15, 23, 42, 0.8);
+        border: 1px solid var(--border-subtle);
+        padding: 4px 10px;
+        border-radius: 6px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: var(--bg-base);
+        background-image: radial-gradient(
+          rgba(56, 189, 248, 0.08) 1px,
+          transparent 1px
+        );
+        background-size: 26px 26px;
+        color: var(--text-primary);
+        font-family: "Inter", sans-serif;
+        line-height: 1.65;
+        overflow-x: hidden;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 6%;
+        border-bottom: 1px solid var(--border-subtle);
+        background: rgba(11, 15, 23, 0.85);
+        backdrop-filter: blur(12px);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .logo {
+        font-family: "Caveat", cursive;
+        font-weight: 700;
+        font-size: 2.15rem;
+        line-height: 1;
+        color: var(--text-primary);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        letter-spacing: 0.02em;
+      }
+
+      .logo span {
+        color: var(--accent-cyan);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--text-secondary);
+        font-weight: 500;
+        font-size: 0.92rem;
+        transition: color 0.2s;
+      }
+
+      .nav-links a:hover {
+        color: var(--accent-cyan);
+      }
+
+      .btn-contact-pill {
+        background: rgba(56, 189, 248, 0.12);
+        border: 1px solid var(--accent-cyan);
+        color: var(--accent-cyan) !important;
+        padding: 7px 18px;
+        border-radius: 6px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.85rem !important;
+        font-weight: 600 !important;
+        transition:
+          background 0.2s,
+          transform 0.15s;
+      }
+
+      .btn-contact-pill:hover {
+        background: var(--accent-cyan);
+        color: #0b0f17 !important;
+        transform: translateY(-1px);
+      }
+
+      .container {
+        max-width: 1140px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background-color: var(--bg-base);
-      background-image: radial-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px);
-      background-size: 26px 26px;
-      color: var(--text-primary);
-      font-family: 'Inter', sans-serif;
-      line-height: 1.65;
-      overflow-x: hidden;
-    }
-
-    /* Navigation */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 6%;
-      border-bottom: 1px solid var(--border-subtle);
-      background: rgba(11, 15, 23, 0.85);
-      backdrop-filter: blur(12px);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .logo {
-      font-family: 'Caveat', cursive;
-      font-weight: 700;
-      font-size: 2.15rem;
-      line-height: 1;
-      color: var(--text-primary);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      letter-spacing: 0.02em;
-    }
-
-    .logo span {
-      color: var(--accent-cyan);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-secondary);
-      font-weight: 500;
-      font-size: 0.92rem;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: var(--accent-cyan);
-    }
-
-    .btn-contact-pill {
-      background: rgba(56, 189, 248, 0.12);
-      border: 1px solid var(--accent-cyan);
-      color: var(--accent-cyan) !important;
-      padding: 7px 18px;
-      border-radius: 6px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.85rem !important;
-      font-weight: 600 !important;
-      transition: background 0.2s, transform 0.15s;
-    }
-
-    .btn-contact-pill:hover {
-      background: var(--accent-cyan);
-      color: #0B0F17 !important;
-      transform: translateY(-1px);
-    }
-
-    /* Layout Container */
-    .container {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* Hero Section */
-    .hero {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 48px;
-      padding: 36px 0 68px;
-      align-items: center;
-    }
-
-    .mono-eyebrow {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.88rem;
-      color: var(--accent-emerald);
-      margin-bottom: 10px;
-      display: inline-block;
-    }
-
-    .hero-name {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(3rem, 5.8vw, 4.6rem);
-      font-weight: 700;
-      line-height: 1.04;
-      letter-spacing: -0.03em;
-      margin-bottom: 20px;
-    }
-
-    .hero-name .gradient-text {
-      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-emerald));
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero-bio {
-      font-size: 1.06rem;
-      color: var(--text-secondary);
-      max-width: 540px;
-      margin-bottom: 22px;
-    }
-
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 28px;
-    }
-
-    .hero-tag-chip {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem;
-      color: var(--text-primary);
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      padding: 5px 12px;
-      border-radius: 6px;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--accent-cyan);
-      color: #0B0F17;
-      text-decoration: none;
-      padding: 13px 26px;
-      border-radius: 8px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      transition: transform 0.15s, box-shadow 0.2s;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(56, 189, 248, 0.28);
-    }
-
-    /* System Snapshot Card (Right Side of Hero) */
-    .snapshot-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      border-radius: 14px;
-      padding: 28px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
-    }
-
-    .snapshot-row {
-      padding: 12px 0;
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .snapshot-row:first-child {
-      padding-top: 0;
-    }
-
-    .snapshot-row:last-of-type {
-      border-bottom: none;
-    }
-
-    .snapshot-key {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.78rem;
-      color: var(--accent-cyan);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 3px;
-    }
-
-    .snapshot-val {
-      font-size: 0.94rem;
-      font-weight: 500;
-      color: var(--text-primary);
-    }
-
-    .snapshot-metrics {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 16px;
-    }
-
-    .metric-box {
-      background: rgba(11, 15, 23, 0.65);
-      border: 1px solid var(--border-subtle);
-      border-radius: 10px;
-      padding: 14px;
-    }
-
-    .metric-num {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: var(--accent-cyan);
-    }
-
-    .metric-label {
-      font-size: 0.8rem;
-      color: var(--text-secondary);
-      margin-top: 2px;
-    }
-
-    /* Focus Strip */
-    .focus-strip {
-      background: linear-gradient(90deg, rgba(56, 189, 248, 0.08), rgba(52, 211, 153, 0.08));
-      border-top: 1px solid var(--border-subtle);
-      border-bottom: 1px solid var(--border-subtle);
-      padding: 44px 24px;
-      margin-bottom: 72px;
-    }
-
-    .focus-strip-inner {
-      max-width: 900px;
-      margin: 0 auto;
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(1.35rem, 2.8vw, 1.95rem);
-      font-weight: 600;
-      line-height: 1.4;
-      color: var(--text-primary);
-    }
-
-    .focus-strip-inner span {
-      color: var(--accent-cyan);
-    }
-
-    /* Section Headings */
-    .section-block {
-      margin-bottom: 84px;
-    }
-
-    .section-tag {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.85rem;
-      color: var(--accent-cyan);
-      margin-bottom: 6px;
-      display: block;
-    }
-
-    .section-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(2rem, 3.6vw, 2.65rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 10px;
-    }
-
-    .section-subtitle {
-      color: var(--text-secondary);
-      font-size: 0.98rem;
-      max-width: 620px;
-      margin-bottom: 34px;
-    }
-
-    /* Grid & Cards */
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
-      align-items: start;
-    }
-
-    .tech-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      border-radius: 14px;
-      padding: 26px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: border-color 0.2s, transform 0.2s, background-color 0.2s;
-    }
-
-    .tech-card:hover {
-      border-color: var(--border-accent);
-      background: var(--bg-surface-hover);
-      transform: translateY(-3px);
-    }
-
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 16px;
-      gap: 10px;
-    }
-
-    .card-badge {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--accent-cyan);
-      background: rgba(56, 189, 248, 0.1);
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      padding: 4px 10px;
-      border-radius: 6px;
-    }
-
-    .card-badge.emerald {
-      color: var(--accent-emerald);
-      background: rgba(52, 211, 153, 0.1);
-      border-color: rgba(52, 211, 153, 0.25);
-    }
-
-    .card-badge.indigo {
-      color: var(--accent-indigo);
-      background: rgba(129, 140, 248, 0.1);
-      border-color: rgba(129, 140, 248, 0.25);
-    }
-
-    .tech-card h3 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.45rem;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .card-role {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.83rem;
-      color: var(--accent-emerald);
-      margin-bottom: 14px;
-    }
-
-    .card-desc {
-      color: var(--text-secondary);
-      font-size: 0.93rem;
-      margin-bottom: 20px;
-    }
-
-    .pill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 16px;
-    }
-
-    .skill-pill {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.76rem;
-      color: var(--text-primary);
-      background: rgba(11, 15, 23, 0.7);
-      border: 1px solid var(--border-subtle);
-      padding: 4px 11px;
-      border-radius: 999px;
-    }
-
-    /* Interactive 10th / 11th / 12th Grade Chapter Buttons */
-    .syllabus-section {
-      border-top: 1px solid var(--border-subtle);
-      padding-top: 14px;
-      margin-top: 6px;
-    }
-
-    .syllabus-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.78rem;
-      color: var(--text-secondary);
-      margin-bottom: 10px;
-    }
-
-    .grade-btn-group {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .grade-btn {
-      background: rgba(11, 15, 23, 0.8);
-      border: 1px solid var(--border-subtle);
-      border-radius: 6px;
-      padding: 6px 12px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--text-primary);
-      cursor: pointer;
-      transition: all 0.15s;
-    }
-
-    .grade-btn:hover {
-      border-color: var(--accent-cyan);
-      color: var(--accent-cyan);
-    }
-
-    .grade-btn.active {
-      background: var(--accent-cyan);
-      border-color: var(--accent-cyan);
-      color: #0B0F17;
-    }
-
-    .chapter-panel {
-      display: none;
-      margin-top: 12px;
-      background: rgba(11, 15, 23, 0.85);
-      border: 1px solid var(--border-subtle);
-      border-radius: 8px;
-      padding: 14px 16px;
-    }
-
-    .chapter-panel.open {
-      display: block;
-    }
-
-    .chapter-panel-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: 0.98rem;
-      color: var(--accent-cyan);
-      margin-bottom: 8px;
-    }
-
-    .chapter-panel-title span {
-      font-size: 1.18rem;
-    }
-
-    .chapter-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      font-size: 0.83rem;
-      color: var(--text-secondary);
-    }
-
-    .chapter-list li {
-      padding-left: 16px;
-      position: relative;
-      line-height: 1.4;
-    }
-
-    .chapter-list li::before {
-      content: "›";
-      position: absolute;
-      left: 0;
-      color: var(--accent-emerald);
-      font-weight: 700;
-    }
-
-    .card-links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      padding-top: 14px;
-      border-top: 1px solid var(--border-subtle);
-    }
-
-    .link-arrow {
-      font-family: 'JetBrains Mono', monospace;
-      text-decoration: none;
-      color: var(--accent-cyan);
-      font-weight: 600;
-      font-size: 0.85rem;
-      transition: opacity 0.2s;
-    }
-
-    .link-arrow:hover {
-      opacity: 0.8;
-      text-decoration: underline;
-    }
-
-    /* Footer */
-    footer {
-      border-top: 1px solid var(--border-subtle);
-      background: var(--bg-surface);
-      padding: 48px 24px;
-    }
-
-    .footer-inner {
-      max-width: 1140px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .footer-inner h3 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.65rem;
-      margin-top: 4px;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-
-    /* Scroll Reveal Animations */
-    .reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
-                transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-    }
-
-    .method-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--bg-surface);
-    border: 1px solid var(--border-subtle);
-    border-radius: 999px;
-    padding: 5px 14px;
-    margin-bottom: 18px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.78rem;
-    color: var(--text-secondary);
-    cursor: pointer;
-    transition: border-color 0.2s, color 0.2s;
-    }
-
-    .method-pill:hover {
-    border-color: var(--accent-cyan);
-    color: var(--text-primary);
-    }
-
-    .method-pill .step {
-    color: var(--text-secondary);
-    transition: color 0.2s;
-    }
-
-    .method-pill .step.active {
-    color: var(--accent-cyan);
-    font-weight: 700;
-    }
-
-    @media (max-width: 860px) {
       .hero {
-        grid-template-columns: 1fr;
-        padding: 28px 0 48px;
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 48px;
+        padding: 36px 0 68px;
+        align-items: center;
       }
-      .nav-links a:not(.btn-contact-pill) {
+
+      .mono-eyebrow {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.88rem;
+        color: var(--accent-emerald);
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      .hero-name {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(3rem, 5.8vw, 4.6rem);
+        font-weight: 700;
+        line-height: 1.04;
+        letter-spacing: -0.03em;
+        margin-bottom: 20px;
+      }
+
+      .hero-name .gradient-text {
+        background: linear-gradient(
+          90deg,
+          var(--accent-cyan),
+          var(--accent-emerald)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .hero-bio {
+        font-size: 1.06rem;
+        color: var(--text-secondary);
+        max-width: 540px;
+        margin-bottom: 22px;
+      }
+
+      .hero-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 28px;
+      }
+
+      .hero-tag-chip {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.8rem;
+        color: var(--text-primary);
+        background: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        padding: 5px 12px;
+        border-radius: 6px;
+      }
+
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--accent-cyan);
+        color: #0b0f17;
+        text-decoration: none;
+        padding: 13px 26px;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        transition:
+          transform 0.15s,
+          box-shadow 0.2s;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(56, 189, 248, 0.28);
+      }
+
+      #projects .card-links {
+        border-top: none;
+        padding-top: 0;
+      }
+
+      .card-links {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-top: 28px;
+        border-top: none;
+        padding-top: 0;
+      }
+
+      .snapshot-card {
+        background: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        border-radius: 14px;
+        padding: 28px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      }
+
+      .snapshot-row {
+        padding: 12px 0;
+        border-bottom: 1px solid var(--border-subtle);
+      }
+
+      .snapshot-row:first-child {
+        padding-top: 0;
+      }
+
+      .snapshot-row:last-of-type {
+        border-bottom: none;
+      }
+
+      .snapshot-key {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.78rem;
+        color: var(--accent-cyan);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 3px;
+      }
+
+      .snapshot-val {
+        font-size: 0.94rem;
+        font-weight: 500;
+        color: var(--text-primary);
+      }
+
+      .snapshot-metrics {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-top: 16px;
+      }
+
+      .metric-box {
+        background: rgba(11, 15, 23, 0.65);
+        border: 1px solid var(--border-subtle);
+        border-radius: 10px;
+        padding: 14px;
+      }
+
+      .metric-num {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: var(--accent-cyan);
+      }
+
+      .metric-label {
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+        margin-top: 2px;
+      }
+
+      .focus-strip {
+        background: linear-gradient(
+          90deg,
+          rgba(56, 189, 248, 0.08),
+          rgba(52, 211, 153, 0.08)
+        );
+        border-top: 1px solid var(--border-subtle);
+        border-bottom: 1px solid var(--border-subtle);
+        padding: 44px 24px;
+        margin-bottom: 72px;
+      }
+
+      .focus-strip-inner {
+        max-width: 900px;
+        margin: 0 auto;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(1.35rem, 2.8vw, 1.95rem);
+        font-weight: 600;
+        line-height: 1.4;
+        color: var(--text-primary);
+      }
+
+      .focus-strip-inner span {
+        color: var(--accent-cyan);
+      }
+
+      .section-block {
+        margin-bottom: 84px;
+      }
+
+      .section-tag {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.85rem;
+        color: var(--accent-cyan);
+        margin-bottom: 6px;
+        display: block;
+      }
+
+      .section-title {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(2rem, 3.6vw, 2.65rem);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        margin-bottom: 10px;
+      }
+
+      .section-subtitle {
+        color: var(--text-secondary);
+        font-size: 0.98rem;
+        max-width: 620px;
+        margin-bottom: 34px;
+      }
+
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 24px;
+        align-items: start;
+      }
+
+      .tech-card {
+        background: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        border-radius: 14px;
+        padding: 26px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition:
+          border-color 0.2s,
+          transform 0.2s,
+          background-color 0.2s;
+      }
+
+      .tech-card:hover {
+        border-color: var(--border-accent);
+        background: var(--bg-surface-hover);
+        transform: translateY(-3px);
+      }
+
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+        gap: 10px;
+      }
+
+      .card-badge {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.78rem;
+        font-weight: 700;
+        color: var(--accent-cyan);
+        background: rgba(56, 189, 248, 0.1);
+        border: 1px solid rgba(56, 189, 248, 0.25);
+        padding: 4px 10px;
+        border-radius: 6px;
+      }
+
+      .card-badge.emerald {
+        color: var(--accent-emerald);
+        background: rgba(52, 211, 153, 0.1);
+        border-color: rgba(52, 211, 153, 0.25);
+      }
+
+      .card-badge.indigo {
+        color: var(--accent-indigo);
+        background: rgba(129, 140, 248, 0.1);
+        border-color: rgba(129, 140, 248, 0.25);
+      }
+
+      .tech-card h3 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1.45rem;
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+
+      .card-role {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.83rem;
+        color: var(--accent-emerald);
+        margin-bottom: 14px;
+      }
+
+      .card-desc {
+        color: var(--text-secondary);
+        font-size: 0.93rem;
+        margin-bottom: 20px;
+      }
+
+      .pill-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+
+      .skill-pill {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.76rem;
+        color: var(--text-primary);
+        background: rgba(11, 15, 23, 0.7);
+        border: 1px solid var(--border-subtle);
+        padding: 4px 11px;
+        border-radius: 999px;
+      }
+
+      .syllabus-section {
+        border-top: 1px solid var(--border-subtle);
+        padding-top: 14px;
+        margin-top: 6px;
+      }
+
+      .syllabus-label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.78rem;
+        color: var(--text-secondary);
+        margin-bottom: 10px;
+      }
+
+      .grade-btn-group {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .grade-btn {
+        background: rgba(11, 15, 23, 0.8);
+        border: 1px solid var(--border-subtle);
+        border-radius: 6px;
+        padding: 6px 12px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        cursor: pointer;
+        transition: all 0.15s;
+      }
+
+      .grade-btn:hover {
+        border-color: var(--accent-cyan);
+        color: var(--accent-cyan);
+      }
+
+      .grade-btn.active {
+        background: var(--accent-cyan);
+        border-color: var(--accent-cyan);
+        color: #0b0f17;
+      }
+
+      .chapter-panel {
         display: none;
+        margin-top: 12px;
+        background: rgba(11, 15, 23, 0.85);
+        border: 1px solid var(--border-subtle);
+        border-radius: 8px;
+        padding: 14px 16px;
       }
-    }
-  </style>
-</head>
-<body>
 
-  <!-- Top Navigation -->
-  <nav>
-    <a href="#" class="logo">V<span>.</span>R</a>
-    <div class="nav-links">
-      <a href="#projects">Projects</a>
-      <a href="#education">Education</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact" class="btn-contact-pill">Contact</a>
-    </div>
-  </nav>
+      .chapter-panel.open {
+        display: block;
+      }
 
-  <!-- Hero Section -->
-  <div class="container">
-    <section class="hero">
-      <div>
-        <div class="method-pill" onclick="cycleStep()" title="Click to step through my thinking process">
+      .chapter-panel-title {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+        font-size: 0.98rem;
+        color: var(--accent-cyan);
+        margin-bottom: 8px;
+      }
+
+      .chapter-panel-title span {
+        font-size: 1.18rem;
+      }
+
+      .chapter-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        font-size: 0.83rem;
+        color: var(--text-secondary);
+      }
+
+      .chapter-list li {
+        padding-left: 16px;
+        position: relative;
+        line-height: 1.4;
+      }
+
+      .chapter-list li::before {
+        content: "›";
+        position: absolute;
+        left: 0;
+        color: var(--accent-emerald);
+        font-weight: 700;
+      }
+
+      .card-links {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+        padding-top: 14px;
+        border-top: 1px solid var(--border-subtle);
+      }
+
+      .link-arrow {
+        font-family: "JetBrains Mono", monospace;
+        text-decoration: none;
+        color: var(--accent-cyan);
+        font-weight: 600;
+        font-size: 0.85rem;
+        transition: opacity 0.2s;
+      }
+
+      .link-arrow:hover {
+        opacity: 0.8;
+        text-decoration: underline;
+      }
+
+      footer {
+        border-top: 1px solid var(--border-subtle);
+        background: var(--bg-surface);
+        padding: 48px 24px;
+      }
+
+      .footer-inner {
+        max-width: 1140px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .footer-inner h3 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1.65rem;
+        margin-top: 4px;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(16px) scale(0.88);
+        transition:
+          opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+
+      .method-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        border-radius: 999px;
+        padding: 5px 14px;
+        margin-bottom: 18px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.78rem;
+        color: var(--text-secondary);
+        cursor: pointer;
+        transition:
+          border-color 0.2s,
+          color 0.2s;
+      }
+
+      .method-pill:hover {
+        border-color: var(--accent-cyan);
+        color: var(--text-primary);
+      }
+
+      .method-pill .step {
+        color: var(--text-secondary);
+        transition: color 0.2s;
+      }
+
+      .method-pill .step.active {
+        color: var(--accent-cyan);
+        font-weight: 700;
+      }
+
+      #hobbies {
+        min-height: calc(100vh - 75px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 0;
+      }
+
+      .hobbies-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        margin-top: 12px;
+      }
+
+      .hobby-card {
+        background: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        border-radius: 14px;
+        padding: 36px 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition:
+          border-color 0.2s,
+          transform 0.2s,
+          background-color 0.2s;
+      }
+
+      .hobby-card:hover {
+        border-color: var(--border-accent);
+        background: var(--bg-surface-hover);
+        transform: translateY(-4px);
+      }
+
+      .hobby-left {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .hobby-icon {
+        font-size: 1.85rem;
+        width: 58px;
+        height: 58px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(11, 15, 23, 0.8);
+        border: 1px solid var(--border-subtle);
+        border-radius: 12px;
+        flex-shrink: 0;
+      }
+
+      .hobby-title {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1.45rem;
+        font-weight: 700;
+        color: var(--text-primary);
+      }
+
+      .hobby-tag {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.78rem;
+        color: var(--accent-cyan);
+        background: rgba(56, 189, 248, 0.08);
+        border: 1px solid rgba(56, 189, 248, 0.25);
+        padding: 5px 12px;
+        border-radius: 6px;
+      }
+
+      @media (max-width: 700px) {
+        .hobbies-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      footer#contact {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 80px;
+        border-top: 1px solid var(--border-subtle);
+        background: linear-gradient(
+          135deg,
+          rgba(56, 189, 248, 0.14),
+          rgba(52, 211, 153, 0.14)
+        );
+        padding: 60px 24px;
+        text-align: center;
+      }
+
+      .contact-heading {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(2rem, 4vw, 2.8rem);
+        font-weight: 700;
+        color: var(--accent-emerald);
+        letter-spacing: -0.02em;
+      }
+
+      .contact-wrap {
+        max-width: 1140px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+      }
+
+      .contact-actions {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 28px;
+        flex-wrap: wrap;
+      }
+
+      .btn-contact-solid {
+        background: var(--accent-cyan);
+        color: #0b0f17;
+        border: 2px solid var(--accent-cyan);
+        padding: 18px 38px;
+        border-radius: 10px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 1.02rem;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer;
+        box-shadow: 4px 4px 0px rgba(56, 189, 248, 0.3);
+        transition:
+          transform 0.15s,
+          box-shadow 0.15s;
+      }
+
+      .btn-contact-solid:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 6px 6px 0px rgba(56, 189, 248, 0.45);
+      }
+
+      .btn-contact-outline {
+        background: var(--bg-base);
+        color: var(--text-primary);
+        border: 2px solid var(--text-primary);
+        padding: 18px 38px;
+        border-radius: 10px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 1.02rem;
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: 4px 4px 0px rgba(241, 245, 249, 0.25);
+        transition:
+          transform 0.15s,
+          box-shadow 0.15s,
+          border-color 0.15s,
+          color 0.15s;
+      }
+
+      .btn-contact-outline:hover {
+        transform: translate(-2px, -2px);
+        border-color: var(--accent-emerald);
+        color: var(--accent-emerald);
+        box-shadow: 6px 6px 0px rgba(52, 211, 153, 0.35);
+      }
+
+      .email-reveal-box {
+        display: none;
+        align-items: center;
+        gap: 12px;
+        background: var(--bg-base);
+        border: 1px solid var(--accent-cyan);
+        border-radius: 8px;
+        padding: 10px 18px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.9rem;
+        color: var(--text-primary);
+        animation: fadeInEmail 0.25s ease;
+      }
+
+      .email-reveal-box.show {
+        display: inline-flex;
+      }
+
+      .email-reveal-box a {
+        color: var(--accent-cyan);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .email-reveal-box a:hover {
+        text-decoration: underline;
+      }
+
+      .copy-email-btn {
+        background: rgba(56, 189, 248, 0.14);
+        border: 1px solid var(--accent-cyan);
+        color: var(--accent-cyan);
+        border-radius: 5px;
+        padding: 4px 10px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.76rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition:
+          background 0.15s,
+          color 0.15s;
+      }
+
+      .copy-email-btn:hover {
+        background: var(--accent-cyan);
+        color: #0b0f17;
+      }
+
+      @keyframes fadeInEmail {
+        from {
+          opacity: 0;
+          transform: translateY(-6px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 860px) {
+        .hero {
+          grid-template-columns: 1fr;
+          padding: 28px 0 48px;
+        }
+
+        .nav-links a:not(.btn-contact-pill) {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="#" class="logo">V<span>.</span>R</a>
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#hobbies">Hobbies &amp; Interests</a>
+        <a href="#contact" class="btn-contact-pill">Contact</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <section class="hero">
+        <div>
+          <div
+            class="method-pill"
+            onclick="cycleStep()"
+            title="Click to step through my thinking process"
+          >
             <span class="step active" id="step0">01. Deconstruct</span>
             <span>→</span>
             <span class="step" id="step1">02. Identify Axioms</span>
             <span>→</span>
             <span class="step" id="step2">03. Reconstruct</span>
+          </div>
+          <span class="mono-eyebrow">// hello, world — I'm</span>
+          <h1 class="hero-name">
+            Vikram <span class="gradient-text">Rajaram</span>
+          </h1>
+          <p class="hero-bio">
+            I am a Secondary student at NIOS and JEE Aspirant focused on
+            mathematics, algorithm design, and fullstack development. I enjoy
+            building interactive simulations and software systems from first
+            principles.
+          </p>
+          <div class="hero-tags">
+            <span class="hero-tag-chip">Fullstack</span>
+            <span class="hero-tag-chip">Python</span>
+            <span class="hero-tag-chip">DSA</span>
+            <span class="hero-tag-chip">Mathematics</span>
+          </div>
+          <a href="#projects" class="btn-primary">Explore my work →</a>
         </div>
-        <span class="mono-eyebrow">// hello, world — I'm</span>
-        <h1 class="hero-name">
-          Vikram <span class="gradient-text">Rajaram</span>
-        </h1>
-        <p class="hero-bio">
-          I am a Secondary student at NIOS and JEE Aspirant focused on mathematics, algorithm design, and fullstack development. I enjoy building interactive simulations and software systems from first principles.
+
+        <div class="snapshot-card">
+          <div class="snapshot-row">
+            <div class="snapshot-key">Schooling</div>
+            <div class="snapshot-val">
+              NIOS Secondary Student · Allen Online
+            </div>
+          </div>
+          <div class="snapshot-row">
+            <div class="snapshot-key">Engineering Focus</div>
+            <div class="snapshot-val">
+              Logic, Data Structures, Algorithms &amp; Fullstack Web
+            </div>
+          </div>
+
+          <div class="snapshot-metrics">
+            <div class="metric-box">
+              <div class="metric-num">10th–12th</div>
+              <div class="metric-label">Grade Math Covered</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-num">Bengaluru</div>
+              <div class="metric-label">Karnataka, India</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="focus-strip">
+      <div class="focus-strip-inner">
+        I like understanding systems from the ground up — combining
+        <span>clean algorithmic logic</span> and higher-level mathematics to
+        build interactive software people can test directly in their browser.
+      </div>
+    </section>
+
+    <div class="container">
+      <section id="projects" class="section-block">
+        <span class="section-tag">01 // FEATURED BUILDS</span>
+        <h2 class="section-title">Projects</h2>
+        <p class="section-subtitle">
+          Simulations and applications built from scratch. Test the live
+          interactive demos or inspect the source code.
         </p>
-        <div class="hero-tags">
-          <span class="hero-tag-chip">Fullstack</span>
-          <span class="hero-tag-chip">Python</span>
-          <span class="hero-tag-chip">DSA</span>
-          <span class="hero-tag-chip">Mathematics</span>
-        </div>
-        <a href="#projects" class="btn-primary">Explore my work →</a>
-      </div>
 
-      <!-- System Snapshot Card -->
-      <div class="snapshot-card">
-        <div class="snapshot-row">
-          <div class="snapshot-key">Schooling</div>
-          <div class="snapshot-val">NIOS Secondary Student · Allen Online (JEE Aspirant)</div>
-        </div>
-        <div class="snapshot-row">
-          <div class="snapshot-key">Engineering Focus</div>
-          <div class="snapshot-val">Logic, Data Structures, Algorithms &amp; Fullstack Web</div>
-        </div>
+        <div class="cards-grid" id="projectsGrid"></div>
+      </section>
 
-        <div class="snapshot-metrics">
-          <div class="metric-box">
-            <div class="metric-num">10th–12th</div>
-            <div class="metric-label">Grade Math Covered</div>
-          </div>
-          <div class="metric-box">
-            <div class="metric-num">Bengaluru</div>
-            <div class="metric-label">Karnataka, India</div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
+      <section id="education" class="section-block">
+        <span class="section-tag">02 // ACADEMIC FOUNDATION</span>
+        <h2 class="section-title">Education &amp; Programs</h2>
+        <p class="section-subtitle">
+          Combining flexible open schooling with accelerated mathematics and
+          competitive STEM preparation.
+        </p>
 
-  <!-- Focus Statement Strip -->
-  <section class="focus-strip">
-    <div class="focus-strip-inner">
-      I like understanding systems from the ground up — combining <span>clean algorithmic logic</span> and higher-level mathematics to build interactive software people can test directly in their browser.
-    </div>
-  </section>
-
-  <div class="container">
-    <!-- 01: Projects Section -->
-    <section id="projects" class="section-block">
-      <span class="section-tag">01 // FEATURED BUILDS</span>
-      <h2 class="section-title">Projects</h2>
-      <p class="section-subtitle">
-        Simulations and applications built from scratch. Test the live interactive demos or inspect the source code.
-      </p>
-
-      <div class="cards-grid" id="projectsGrid"></div>
-    </section>
-
-    <!-- 02: Education & Programs -->
-    <section id="education" class="section-block">
-      <span class="section-tag">02 // ACADEMIC FOUNDATION</span>
-      <h2 class="section-title">Education &amp; Programs</h2>
-      <p class="section-subtitle">
-        Combining flexible open schooling with accelerated mathematics and competitive STEM preparation.
-      </p>
-
-      <div class="cards-grid">
-        <div class="tech-card">
-          <div>
-            <div class="card-header">
-              <span class="card-badge">NIOS</span>
-              <span class="card-badge emerald">SECONDARY</span>
+        <div class="cards-grid">
+          <div class="tech-card">
+            <div>
+              <div class="card-header">
+                <span class="card-badge">NIOS</span>
+                <span class="card-badge emerald">SECONDARY</span>
+              </div>
+              <h3>National Institute of Open Schooling</h3>
+              <div class="card-role">Secondary Student</div>
+              <p class="card-desc">
+                Pursuing Secondary education across core academic disciplines
+                with the flexibility to build independent programming and
+                algorithmic projects.
+              </p>
             </div>
-            <h3>National Institute of Open Schooling</h3>
-            <div class="card-role">Secondary Student</div>
-            <p class="card-desc">
-              Pursuing Secondary education across core academic disciplines with the flexibility to build independent programming and algorithmic projects.
-            </p>
-          </div>
-          <div class="pill-list">
-            <span class="skill-pill">Mathematics</span>
-            <span class="skill-pill">Science</span>
-            <span class="skill-pill">English</span>
-            <span class="skill-pill">Business Studies</span>
-            <span class="skill-pill">Economics</span>
-          </div>
-        </div>
-
-        <div class="tech-card">
-          <div>
-            <div class="card-header">
-              <span class="card-badge indigo">CUEMATH</span>
-              <span class="card-badge">10TH – 12TH MATH</span>
-            </div>
-            <h3>10th, 11th &amp; 12th Grade Mathematics</h3>
-            <div class="card-role">Cuemath Program</div>
-            <p class="card-desc">
-              Covered 10th, 11th, and 12th grade mathematics curriculum, building a strong analytical foundation in calculus, linear algebra, trigonometry, combinatorics, statistics and probability.
-            </p>
-          </div>
-          <div>
             <div class="pill-list">
-              <span class="skill-pill">Combinatorics</span>
-              <span class="skill-pill">Trigonometry</span>
-              <span class="skill-pill">Linear Algebra</span>
-              <span class="skill-pill">Calculus</span>
-              <span class="skill-pill">Statistics &amp; Probability</span>
+              <span class="skill-pill">Mathematics</span>
+              <span class="skill-pill">Science</span>
+              <span class="skill-pill">English</span>
+              <span class="skill-pill">Business Studies</span>
+              <span class="skill-pill">Economics</span>
             </div>
+          </div>
 
-            <div class="syllabus-section">
-              <div class="syllabus-label">Inspect covered chapters by grade:</div>
-              <div class="grade-btn-group">
-                <button type="button" class="grade-btn" onclick="toggleGrade('g10', this)">10th Grade</button>
-                <button type="button" class="grade-btn" onclick="toggleGrade('g11', this)">11th Grade</button>
-                <button type="button" class="grade-btn" onclick="toggleGrade('g12', this)">12th Grade</button>
+          <div class="tech-card">
+            <div>
+              <div class="card-header">
+                <span class="card-badge indigo">CUEMATH</span>
+                <span class="card-badge">10TH – 12TH MATH</span>
+              </div>
+              <h3>10th, 11th &amp; 12th Grade Mathematics</h3>
+              <div class="card-role">Cuemath Program</div>
+              <p class="card-desc">
+                Covered 10th, 11th, and 12th grade mathematics curriculum,
+                building a strong analytical foundation in calculus, linear
+                algebra, trigonometry, combinatorics, statistics and
+                probability.
+              </p>
+            </div>
+            <div>
+              <div class="pill-list">
+                <span class="skill-pill">Combinatorics</span>
+                <span class="skill-pill">Trigonometry</span>
+                <span class="skill-pill">Linear Algebra</span>
+                <span class="skill-pill">Calculus</span>
+                <span class="skill-pill">Statistics &amp; Probability</span>
               </div>
 
-              <div id="g10" class="chapter-panel">
-                <div class="chapter-panel-title"><span>10th</span> Grade Chapters</div>
-                <ul class="chapter-list">
-                  <li>Real Numbers</li>
-                  <li>Polynomials</li>
-                  <li>Two Variable Linear Equation Pairs</li>
-                  <li>Quadratic Expressions and Equations</li>
-                  <li>Arithmetic Progressions</li>
-                  <li>Coordinate Geometry</li>
-                  <li>Triangles</li>
-                  <li>Trigonometry</li>
-                  <li>Heights and Distances</li>
-                  <li>Circles</li>
-                  <li>Area Related to Circles</li>
-                  <li>Surface Areas and Volumes</li>
-                  <li>Statistics</li>
-                  <li>Probability</li>
-                </ul>
-              </div>
+              <div class="syllabus-section">
+                <div class="syllabus-label">
+                  Inspect covered chapters by grade:
+                </div>
+                <div class="grade-tabs">
+                  <button
+                    type="button"
+                    class="grade-btn"
+                    onclick="toggleGrade('10', this)"
+                  >
+                    10th Grade
+                  </button>
+                  <button
+                    type="button"
+                    class="grade-btn"
+                    onclick="toggleGrade('11', this)"
+                  >
+                    11th Grade
+                  </button>
+                  <button
+                    type="button"
+                    class="grade-btn"
+                    onclick="toggleGrade('12', this)"
+                  >
+                    12th Grade
+                  </button>
+                </div>
 
-              <div id="g11" class="chapter-panel">
-                <div class="chapter-panel-title"><span>11th</span> Grade Chapters</div>
-                <ul class="chapter-list">
-                  <li>Sets</li>
-                  <li>Relations and Functions</li>
-                  <li>Trigonometric Functions</li>
-                  <li>Principle of Mathematical Induction</li>
-                  <li>Complex Numbers and Quadratic Equations</li>
-                  <li>Linear Inequalities</li>
-                  <li>Limits</li>
-                  <li>Derivatives</li>
-                  <li>Permutations and Combinations</li>
-                  <li>Binomial Theorem</li>
-                  <li>Sequences and Series</li>
-                  <li>Straight Lines</li>
-                  <li>Conic Sections</li>
-                  <li>3D Geometry</li>
-                  <li>Mathematical Reasoning</li>
-                  <li>Statistics</li>
-                  <li>Probability</li>
-                </ul>
-              </div>
+                <div id="g10" class="chapter-panel">
+                  <div class="chapter-panel-title">
+                    <span>10th</span> Grade Chapters
+                  </div>
+                  <ul class="chapter-list">
+                    <li>Real Numbers</li>
+                    <li>Polynomials</li>
+                    <li>Two Variable Linear Equation Pairs</li>
+                    <li>Quadratic Expressions and Equations</li>
+                    <li>Arithmetic Progressions</li>
+                    <li>Coordinate Geometry</li>
+                    <li>Triangles</li>
+                    <li>Trigonometry</li>
+                    <li>Heights and Distances</li>
+                    <li>Circles</li>
+                    <li>Area Related to Circles</li>
+                    <li>Surface Areas and Volumes</li>
+                    <li>Statistics</li>
+                    <li>Probability</li>
+                  </ul>
+                </div>
 
-              <div id="g12" class="chapter-panel">
-                <div class="chapter-panel-title"><span>12th</span> Grade Chapters</div>
-                <ul class="chapter-list">
-                  <li>Relations and Functions</li>
-                  <li>Exponential and Logarithmic Functions</li>
-                  <li>Inverse Trigonometric Functions</li>
-                  <li>Matrices</li>
-                  <li>Determinants</li>
-                  <li>Continuity and Differentiability</li>
-                  <li>Differentiation</li>
-                  <li>Application of Derivatives</li>
-                  <li>Integration</li>
-                  <li>Definite Integration and Application</li>
-                  <li>Differential Equations</li>
-                  <li>Vector Algebra</li>
-                  <li>3D Geometry</li>
-                  <li>Linear Programming</li>
-                  <li>Probability</li>
-                </ul>
+                <div id="g11" class="chapter-panel">
+                  <div class="chapter-panel-title">
+                    <span>11th</span> Grade Chapters
+                  </div>
+                  <ul class="chapter-list">
+                    <li>Sets</li>
+                    <li>Relations and Functions</li>
+                    <li>Trigonometric Functions</li>
+                    <li>Principle of Mathematical Induction</li>
+                    <li>Complex Numbers and Quadratic Equations</li>
+                    <li>Linear Inequalities</li>
+                    <li>Limits</li>
+                    <li>Derivatives</li>
+                    <li>Permutations and Combinations</li>
+                    <li>Binomial Theorem</li>
+                    <li>Sequences and Series</li>
+                    <li>Straight Lines</li>
+                    <li>Conic Sections</li>
+                    <li>3D Geometry</li>
+                    <li>Mathematical Reasoning</li>
+                    <li>Statistics</li>
+                    <li>Probability</li>
+                  </ul>
+                </div>
+
+                <div id="g12" class="chapter-panel">
+                  <div class="chapter-panel-title">
+                    <span>12th</span> Grade Chapters
+                  </div>
+                  <ul class="chapter-list">
+                    <li>Relations and Functions</li>
+                    <li>Exponential and Logarithmic Functions</li>
+                    <li>Inverse Trigonometric Functions</li>
+                    <li>Matrices</li>
+                    <li>Determinants</li>
+                    <li>Continuity and Differentiability</li>
+                    <li>Differentiation</li>
+                    <li>Application of Derivatives</li>
+                    <li>Integration</li>
+                    <li>Definite Integration and Application</li>
+                    <li>Differential Equations</li>
+                    <li>Vector Algebra</li>
+                    <li>3D Geometry</li>
+                    <li>Linear Programming</li>
+                    <li>Probability</li>
+                  </ul>
+                </div>
               </div>
+            </div>
+          </div>
+
+          <div class="tech-card">
+            <div>
+              <div class="card-header">
+                <span class="card-badge emerald">ALLEN ONLINE</span>
+                <span class="card-badge">JEE PREP</span>
+              </div>
+              <h3>Allen Online</h3>
+              <div class="card-role">JEE Aspirant</div>
+              <p class="card-desc">
+                Preparing for JEE with structured training in Physics,
+                Chemistry, and Mathematics, sharpening analytical
+                problem-solving speed and quantitative rigor.
+              </p>
+            </div>
+            <div class="pill-list">
+              <span class="skill-pill">JEE Mathematics</span>
+              <span class="skill-pill">Physics</span>
+              <span class="skill-pill">Chemistry</span>
             </div>
           </div>
         </div>
+      </section>
 
-        <div class="tech-card">
-          <div>
-            <div class="card-header">
-              <span class="card-badge emerald">ALLEN ONLINE</span>
-              <span class="card-badge">JEE PREP</span>
+      <section id="skills" class="section-block">
+        <span class="section-tag">03 // CORE STACK</span>
+        <h2 class="section-title">Technical Skills</h2>
+        <p class="section-subtitle">
+          Languages, problem-solving foundations, and web technologies I work
+          with.
+        </p>
+
+        <div class="cards-grid">
+          <div class="tech-card">
+            <div>
+              <div class="card-header">
+                <span class="card-badge">PYTHON</span>
+                <span class="card-badge emerald">LANGUAGE</span>
+              </div>
+              <h3>Python</h3>
+              <p class="card-desc">
+                Writing clean, modular, object-oriented Python code, desktop GUI
+                applications, and custom simulation engines.
+              </p>
             </div>
-            <h3>Allen Online</h3>
-            <div class="card-role">JEE Aspirant</div>
-            <p class="card-desc">
-              Preparing for JEE with structured training in Physics, Chemistry, and Mathematics, sharpening analytical problem-solving speed and quantitative rigor.
-            </p>
+            <div class="pill-list">
+              <span class="skill-pill">Python</span>
+              <span class="skill-pill">OOP</span>
+              <span class="skill-pill">Tkinter</span>
+              <span class="skill-pill">Scripting</span>
+            </div>
           </div>
-          <div class="pill-list">
-            <span class="skill-pill">JEE Mathematics</span>
-            <span class="skill-pill">Physics</span>
-            <span class="skill-pill">Chemistry</span>
+
+          <div class="tech-card">
+            <div>
+              <div class="card-header">
+                <span class="card-badge indigo">DSA</span>
+                <span class="card-badge">ALGORITHMS</span>
+              </div>
+              <h3>Data Structures &amp; Algorithms</h3>
+              <p class="card-desc">
+                Designing efficient scheduling logic, state machines, and
+                algorithmic solutions for complex problems in Python and
+                JavaScript.
+              </p>
+            </div>
+            <div class="pill-list">
+              <span class="skill-pill">Data Structures</span>
+              <span class="skill-pill">Algorithms</span>
+              <span class="skill-pill">State Machines</span>
+              <span class="skill-pill">Logic Design</span>
+            </div>
+          </div>
+
+          <div class="tech-card">
+            <div>
+              <div class="card-header">
+                <span class="card-badge emerald">WEB</span>
+                <span class="card-badge">FULLSTACK</span>
+              </div>
+              <h3>Fullstack Development</h3>
+              <p class="card-desc">
+                Building responsive frontends, interactive HTML5 Canvas
+                simulations, and fullstack web applications deployed on GitHub
+                Pages.
+              </p>
+            </div>
+            <div class="pill-list">
+              <span class="skill-pill">HTML5</span>
+              <span class="skill-pill">CSS3</span>
+              <span class="skill-pill">JavaScript</span>
+              <span class="skill-pill">Fullstack Web</span>
+              <span class="skill-pill">Git &amp; GitHub</span>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
-    <!-- 03: Technical Skills -->
-    <section id="skills" class="section-block">
-      <span class="section-tag">03 // CORE STACK</span>
-      <h2 class="section-title">Technical Skills</h2>
+    <section id="certificates" class="section-block container">
+      <span class="section-tag">04 // CREDENTIALS</span>
+      <h2 class="section-title">Certificates</h2>
       <p class="section-subtitle">
-        Languages, problem-solving foundations, and web technologies I work with.
+        Verified courses, programs, and milestones completed along the way.
       </p>
 
-      <div class="cards-grid">
-        <div class="tech-card">
-          <div>
-            <div class="card-header">
-              <span class="card-badge">PYTHON</span>
-              <span class="card-badge emerald">LANGUAGE</span>
-            </div>
-            <h3>Python</h3>
-            <p class="card-desc">
-              Writing clean, modular, object-oriented Python code, desktop GUI applications, and custom simulation engines.
-            </p>
+      <div class="cards-grid" id="certificatesGrid"></div>
+    </section>
+
+    <section id="hobbies" class="section-block container">
+      <span class="section-tag">05 // OFF THE SCREEN</span>
+      <h2 class="section-title">Hobbies &amp; Interests</h2>
+      <p class="section-subtitle">
+        Things I enjoy outside of coding and mathematics.
+      </p>
+
+      <div class="hobbies-grid">
+        <div class="hobby-card">
+          <div class="hobby-left">
+            <div class="hobby-icon">🏀</div>
+            <div class="hobby-title">Basketball</div>
           </div>
-          <div class="pill-list">
-            <span class="skill-pill">Python</span>
-            <span class="skill-pill">OOP</span>
-            <span class="skill-pill">Tkinter</span>
-            <span class="skill-pill">Scripting</span>
-          </div>
+          <span class="hobby-tag">SPORT</span>
         </div>
 
-        <div class="tech-card">
-          <div>
-            <div class="card-header">
-              <span class="card-badge indigo">DSA</span>
-              <span class="card-badge">ALGORITHMS</span>
-            </div>
-            <h3>Data Structures &amp; Algorithms</h3>
-            <p class="card-desc">
-              Designing efficient scheduling logic, state machines, and algorithmic solutions for complex problems in Python and JavaScript.
-            </p>
+        <div class="hobby-card">
+          <div class="hobby-left">
+            <div class="hobby-icon">🎵</div>
+            <div class="hobby-title">Music</div>
           </div>
-          <div class="pill-list">
-            <span class="skill-pill">Data Structures</span>
-            <span class="skill-pill">Algorithms</span>
-            <span class="skill-pill">State Machines</span>
-            <span class="skill-pill">Logic Design</span>
-          </div>
+          <span class="hobby-tag">AUDIO</span>
         </div>
 
-        <div class="tech-card">
-          <div>
-            <div class="card-header">
-              <span class="card-badge emerald">WEB</span>
-              <span class="card-badge">FULLSTACK</span>
-            </div>
-            <h3>Fullstack Development</h3>
-            <p class="card-desc">
-              Building responsive frontends, interactive HTML5 Canvas simulations, and fullstack web applications deployed on GitHub Pages.
-            </p>
+        <div class="hobby-card">
+          <div class="hobby-left">
+            <div class="hobby-icon">🪈</div>
+            <div class="hobby-title">Flute</div>
           </div>
-          <div class="pill-list">
-            <span class="skill-pill">HTML5</span>
-            <span class="skill-pill">CSS3</span>
-            <span class="skill-pill">JavaScript</span>
-            <span class="skill-pill">Fullstack Web</span>
-            <span class="skill-pill">Git &amp; GitHub</span>
+          <span class="hobby-tag">INSTRUMENT</span>
+        </div>
+
+        <div class="hobby-card">
+          <div class="hobby-left">
+            <div class="hobby-icon">💪</div>
+            <div class="hobby-title">Pull-ups</div>
           </div>
+          <span class="hobby-tag">TRAINING</span>
         </div>
       </div>
     </section>
-  </div>
 
-  <!-- Contact Footer -->
-  <footer id="contact">
-    <div class="footer-inner">
-      <div>
-        <span class="mono-eyebrow">// let's connect</span>
-        <h3>Get in touch.</h3>
+    <footer id="contact">
+      <div class="contact-wrap">
+        <div class="contact-heading">// let's connect</div>
+        <div class="contact-actions">
+          <button
+            type="button"
+            class="btn-contact-solid"
+            onclick="revealEmail()"
+          >
+            Email me
+          </button>
+          <a
+            href="https://github.com/vikramrakr"
+            target="_blank"
+            class="btn-contact-outline"
+            >GitHub ↗</a
+          >
+        </div>
+        <div class="email-reveal-box" id="emailRevealBox">
+          <a href="mailto:vikram.rakr@gmail.com">vikram.rakr@gmail.com</a>
+          <button
+            type="button"
+            class="copy-email-btn"
+            id="copyEmailBtn"
+            onclick="copyEmail()"
+          >
+            Copy
+          </button>
+        </div>
       </div>
-      <div class="footer-links">
-        <a href="mailto:vikram.rakr@gmail.com" class="link-arrow">vikram.rakr@gmail.com ↗</a>
-        <a href="https://github.com/vikramrakr" target="_blank" class="link-arrow">github.com/vikramrakr ↗</a>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
-  <script>
-    // =========================================================================
-    // HOW TO ADD A NEW PROJECT LATER:
-    // Copy one { ... } object below, paste it after a comma, and edit!
-    // =========================================================================
-    const PROJECTS = [
-      {
-        badge: "SIMULATION",
-        tag: "SYSTEM DESIGN",
-        tagStyle: "emerald", // "cyan", "emerald", or "indigo"
-        title: "Multi-Car Elevator System",
-        subtitle: "Real-Time Dispatching & State Machine",
-        description:
-          "A multi-elevator scheduling simulation featuring directional pickup routing, dual up/down request queues, door dwell timers, and obstruction safety interlocks. Built in Python (Tkinter) and ported to an interactive browser demo.",
-        skills: ["Python", "JavaScript", "HTML5 Canvas", "State Machines", "DSA"],
-        liveUrl: "https://vikramrakr.github.io/Multi-Car-Elevator-System/",
-        repoUrl: "https://github.com/vikramrakr/Multi-Car-Elevator-System"
-      }
-      // Add your next project here!
-    ];
+    <script>
+      const PROJECTS = [
+        {
+          tag: "SYSTEMS & SIMULATION",
+          tagStyle: "cyan",
+          category: "PYTHON • TKINTER",
+          title: "Multi Car Elevator System",
+          description:
+            "An object-oriented M×N elevator control simulation featuring smart multi-car dispatching (on-the-way eligibility, proximity, and workload tie-breaking), dual sorted LOOK queues, door obstruction safety interlocks, and a real-time interactive dashboard.",
+          tech: [
+            "Python",
+            "OOP",
+            "Tkinter",
+            "LOOK Scheduling",
+            "State Machines",
+          ],
+          githubUrl: "https://github.com/vikramrakr/Multi-Car-Elevator-System",
+          liveUrl: "https://vikramrakr.github.io/Multi-Car-Elevator-System/",
+        },
+      ];
 
-    function renderProjects() {
-      const grid = document.getElementById("projectsGrid");
-      grid.innerHTML = PROJECTS.map(p => `
-        <div class="tech-card">
+      function renderProjects() {
+        const grid = document.getElementById("projectsGrid");
+        if (!grid) return;
+
+        grid.innerHTML = PROJECTS.map(
+          (p) => `
+        <div class="tech-card reveal">
           <div>
             <div class="card-header">
-              <span class="card-badge">${p.badge}</span>
-              <span class="card-badge ${p.tagStyle || ''}">${p.tag}</span>
+              <span class="card-badge ${p.tagStyle || ""}">${p.tag}</span>
+              <span class="card-badge emerald">${p.category}</span>
             </div>
             <h3>${p.title}</h3>
-            <div class="card-role">${p.subtitle}</div>
             <p class="card-desc">${p.description}</p>
+            ${
+              p.tech
+                ? `
+              <div class="tech-pills">
+                ${p.tech.map((t) => `<span class="tech-pill">${t}</span>`).join("")}
+              </div>
+            `
+                : ""
+            }
           </div>
-          <div>
-            <div class="pill-list">
-              ${p.skills.map(s => `<span class="skill-pill">${s}</span>`).join("")}
-            </div>
-            <div class="card-links">
-              ${p.liveUrl ? `<a href="${p.liveUrl}" target="_blank" class="link-arrow">Live Simulation ↗</a>` : ""}
-              ${p.repoUrl ? `<a href="${p.repoUrl}" target="_blank" class="link-arrow">Source Code ↗</a>` : ""}
-            </div>
+          <div class="card-links">
+            ${p.githubUrl ? `<a href="${p.githubUrl}" target="_blank" rel="noopener noreferrer" class="link-arrow">GitHub ↗</a>` : ""}
+            ${p.liveUrl ? `<a href="${p.liveUrl}" target="_blank" rel="noopener noreferrer" class="link-arrow">Live Demo ↗</a>` : ""}
           </div>
         </div>
-      `).join("");
-    }
-
-    function toggleGrade(panelId, btn) {
-      const targetPanel = document.getElementById(panelId);
-      const isAlreadyOpen = targetPanel.classList.contains("open");
-
-      document.querySelectorAll(".chapter-panel").forEach(p => p.classList.remove("open"));
-      document.querySelectorAll(".grade-btn").forEach(b => b.classList.remove("active"));
-
-      if (!isAlreadyOpen) {
-        targetPanel.classList.add("open");
-        btn.classList.add("active");
+      `,
+        ).join("");
       }
-    }
 
-    renderProjects();
-    // 1. Slow, custom smooth scroll for "Explore my work" (and navbar links)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        const target = document.querySelector(targetId);
-        if (!target) return;
+      const CERTIFICATES = [
+        {
+          issuer: "UDEMY",
+          tag: "ALGORITHMS",
+          tagStyle: "cyan",
+          title: "Master the Coding Interview: Data Structures + Algorithms",
+          date: "July 28, 2026 • 20 Hours",
+          description:
+            "Comprehensive training in arrays, hash tables, linked lists, trees, graphs, recursion, sorting, searching, and dynamic programming.",
+          credentialUrl:
+            "https://drive.google.com/file/d/18hQ_LhM66wQ_gQkd0fFElluHKZYBntLW/view?usp=sharing",
+        },
+        {
+          issuer: "UDEMY",
+          tag: "FULLSTACK",
+          tagStyle: "emerald",
+          title: "The Complete Full-Stack Web Development Bootcamp",
+          date: "Aug. 28, 2025 • 61.5 Hours",
+          description:
+            "End-to-end web development covering HTML5, CSS3, JavaScript, Node.js, Express, REST APIs, SQL/PostgreSQL, and deployment.",
+          credentialUrl:
+            "https://drive.google.com/file/d/1oMScGMZhGePl98c08iUl0E_uCsvAMlPq/view?usp=sharing",
+        },
+        {
+          issuer: "UDEMY",
+          tag: "REACT & NEXT.JS",
+          tagStyle: "indigo",
+          title: "The Ultimate React Course 2024: React, Next.js, Redux & More",
+          date: "Oct. 28, 2024 • 84 Hours",
+          description:
+            "Modern React architecture including custom hooks, state management with Redux, Context API, React Router, and Next.js.",
+          credentialUrl:
+            "https://drive.google.com/file/d/1dIEMD_-cDgAjLdL77ezXScS21ZGC6NSS/view?usp=sharing",
+        },
+        {
+          issuer: "UDEMY",
+          tag: "JAVASCRIPT",
+          tagStyle: "cyan",
+          title: "The Complete JavaScript Course 2023: From Zero to Expert!",
+          date: "Sept. 30, 2023 • 68.5 Hours",
+          description:
+            "Deep dive into modern ES6+ JavaScript, asynchronous programming, promises, OOP, DOM manipulation, and application architecture.",
+          credentialUrl:
+            "https://drive.google.com/file/d/1N39aT6tbnsXdMvcFgKLD-6ecC2JO1hLD/view?usp=sharing",
+        },
+        {
+          issuer: "GOOGLE CLOUD • COURSERA",
+          tag: "GENERATIVE AI",
+          tagStyle: "indigo",
+          title: "Introduction to Generative AI",
+          date: "June 19, 2023",
+          description:
+            "Foundational concepts of generative AI, large language models, model types, and Google Cloud AI development workflows.",
+          credentialUrl:
+            "https://drive.google.com/file/d/13z7owmAOtzsj_-SqJSvNHFVKkgWIYtiw/view?usp=sharing",
+        },
+      ];
 
-        e.preventDefault();
-        const targetPosition = target.getBoundingClientRect().top + window.scrollY - 75;
-        const startPosition = window.scrollY;
-        const distance = targetPosition - startPosition;
-        const duration = 1100; // Duration in ms (1.1 seconds — increase to make it even slower)
+      function renderCertificates() {
+        const grid = document.getElementById("certificatesGrid");
+        if (!grid) return;
+
+        grid.innerHTML = CERTIFICATES.map(
+          (c) => `
+        <div class="tech-card reveal">
+          <div>
+            <div class="card-header">
+              <span class="card-badge ${c.tagStyle || ""}">${c.issuer}</span>
+              <span class="card-badge emerald">${c.tag}</span>
+            </div>
+            <h3>${c.title}</h3>
+            <div class="card-role">${c.date}</div>
+            <p class="card-desc">${c.description}</p>
+          </div>
+          ${
+            c.credentialUrl
+              ? `
+            <div class="card-links">
+              <a href="${c.credentialUrl}" target="_blank" rel="noopener noreferrer" class="link-arrow">View Certificate ↗</a>
+            </div>
+          `
+              : ""
+          }
+        </div>
+      `,
+        ).join("");
+      }
+
+      renderProjects();
+      renderCertificates();
+
+      const revealElements = document.querySelectorAll(
+        ".section-block .section-title, " +
+          ".section-block .section-subtitle, " +
+          ".cards-grid > div, " +
+          ".hobbies-grid > div, " +
+          "#education > div > div, " +
+          "#skills > div > div",
+      );
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            } else {
+              entry.target.classList.remove("visible");
+            }
+          });
+        },
+        {
+          threshold: 0.08,
+          rootMargin: "-25px 0px -25px 0px",
+        },
+      );
+
+      revealElements.forEach((el) => {
+        el.classList.add("reveal");
+        observer.observe(el);
+      });
+
+      function glideToY(targetY, duration = 600) {
+        const startY = window.scrollY;
+        const diff = targetY - startY;
         let startTime = null;
 
-        function easeInOutCubic(t) {
-        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        function step(timestamp) {
+          if (!startTime) startTime = timestamp;
+          const progress = Math.min((timestamp - startTime) / duration, 1);
+          const ease =
+            progress < 0.5
+              ? 4 * progress * progress * progress
+              : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+          window.scrollTo(0, startY + diff * ease);
+
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          }
         }
 
-        function animation(currentTime) {
-        if (startTime === null) startTime = currentTime;
-        const timeElapsed = currentTime - startTime;
-        const progress = Math.min(timeElapsed / duration, 1);
-        window.scrollTo(0, startPosition + distance * easeInOutCubic(progress));
-        if (timeElapsed < duration) requestAnimationFrame(animation);
+        requestAnimationFrame(step);
+      }
+
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          const targetId = this.getAttribute("href");
+          if (!targetId || targetId === "#") return;
+
+          const target = document.querySelector(targetId);
+          if (!target) return;
+
+          e.preventDefault();
+          const offset = targetId === "#contact" ? 0 : 75;
+          const targetPosition =
+            target.getBoundingClientRect().top + window.scrollY - offset;
+
+          glideToY(targetPosition, 1200);
+        });
+      });
+
+      let emailHideTimer;
+
+      function revealEmail() {
+        const box = document.getElementById("emailRevealBox");
+        if (!box) return;
+        box.classList.add("show");
+
+        clearTimeout(emailHideTimer);
+        emailHideTimer = setTimeout(() => {
+          box.classList.remove("show");
+        }, 5000);
+      }
+
+      function copyEmail() {
+        navigator.clipboard.writeText("vikram.rakr@gmail.com");
+        const btn = document.getElementById("copyEmailBtn");
+        const box = document.getElementById("emailRevealBox");
+        if (btn) btn.textContent = "Copied!";
+
+        clearTimeout(emailHideTimer);
+        setTimeout(() => {
+          if (btn) btn.textContent = "Copy";
+          if (box) box.classList.remove("show");
+        }, 1800);
+      }
+
+      let currentStep = 0;
+
+      function cycleStep() {
+        const currentEl = document.getElementById(`step${currentStep}`);
+        if (!currentEl) return;
+
+        currentEl.classList.remove("active");
+        currentStep = (currentStep + 1) % 3;
+
+        const nextEl = document.getElementById(`step${currentStep}`);
+        if (nextEl) nextEl.classList.add("active");
+      }
+
+      setInterval(cycleStep, 1200);
+
+      function toggleGrade(grade, btn) {
+        const targetPanel = document.getElementById(`panel-${grade}`);
+        if (!targetPanel) return;
+
+        const isAlreadyOpen =
+          targetPanel.classList.contains("open") ||
+          targetPanel.style.display === "block";
+
+        document.querySelectorAll(".chapter-panel").forEach((panel) => {
+          panel.classList.remove("open");
+          panel.style.display = "none";
+        });
+        document
+          .querySelectorAll(".grade-btn")
+          .forEach((b) => b.classList.remove("active"));
+
+        if (!isAlreadyOpen) {
+          targetPanel.classList.add("open");
+          targetPanel.style.display = "block";
+          if (btn) btn.classList.add("active");
+        }
+      }
+
+      function toggleGrade(grade, btn) {
+        const targetPanel = document.getElementById(`panel-${grade}`);
+        if (!targetPanel) return;
+
+        const isAlreadyOpen =
+          targetPanel.classList.contains("open") ||
+          targetPanel.style.display === "block";
+
+        document.querySelectorAll(".chapter-panel").forEach((panel) => {
+          panel.classList.remove("open");
+          panel.style.display = "none";
+        });
+        document
+          .querySelectorAll(".grade-btn")
+          .forEach((b) => b.classList.remove("active"));
+
+        if (!isAlreadyOpen) {
+          targetPanel.classList.add("open");
+          targetPanel.style.display = "block";
+          if (btn) btn.classList.add("active");
+        }
+      }
+
+      (function () {
+        const eduSection = document.getElementById("education");
+        if (!eduSection) return;
+
+        const gradeButtons = Array.from(
+          eduSection.querySelectorAll("button"),
+        ).filter((btn) => /10th|11th|12th/i.test(btn.textContent));
+
+        if (gradeButtons.length === 0) return;
+
+        const btnContainer = gradeButtons[0].parentElement;
+        let panels = Array.from(
+          btnContainer.parentElement.querySelectorAll(
+            ".chapter-panel, .syllabus-panel, [id*='10'], [id*='11'], [id*='12']",
+          ),
+        ).filter((el) => el.tagName !== "BUTTON");
+
+        if (panels.length < gradeButtons.length) {
+          panels = [];
+          let next = btnContainer.nextElementSibling;
+          while (next && panels.length < gradeButtons.length) {
+            panels.push(next);
+            next = next.nextElementSibling;
+          }
         }
 
-        requestAnimationFrame(animation);
-    });
-    });
+        gradeButtons.forEach((btn, idx) => {
+          btn.removeAttribute("onclick");
 
-    // 2. Fade-and-slide elements in as you scroll down
-    const revealElements = document.querySelectorAll(
-    '.focus-strip, .section-tag, .section-title, .section-subtitle, .tech-card, .footer-inner'
-    );
+          btn.addEventListener("click", () => {
+            const targetPanel = panels[idx];
+            if (!targetPanel) return;
 
-    revealElements.forEach(el => el.classList.add('reveal'));
+            const isCurrentlyOpen =
+              targetPanel.classList.contains("open") ||
+              targetPanel.classList.contains("active") ||
+              targetPanel.style.display === "block";
 
-    const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        } else {
-        entry.target.classList.remove('visible');
-        }
-    });
-    }, {
-    threshold: 0.08,
-    rootMargin: "-60px 0px -80px 0px"
-    });
+            panels.forEach((p) => {
+              p.classList.remove("open", "active");
+              p.style.display = "none";
+            });
+            gradeButtons.forEach((b) => b.classList.remove("active"));
 
-    revealElements.forEach(el => observer.observe(el));
-    
-    let currentStep = 0;
-    function cycleStep() {
-    document.getElementById(`step${currentStep}`).classList.remove("active");
-    currentStep = (currentStep + 1) % 3;
-    document.getElementById(`step${currentStep}`).classList.add("active");
-    }
-    setInterval(cycleStep, 1250);
-  </script>
-</body>
+            if (!isCurrentlyOpen) {
+              targetPanel.classList.add("open", "active");
+              targetPanel.style.display = "block";
+              btn.classList.add("active");
+            }
+          });
+        });
+      })();
+    </script>
+  </body>
 </html>
